@@ -31,6 +31,7 @@ export default class CommentsS3Repository {
       @param comment: the comment object to be persisted
       @param bucket: the bucket name where the comment will be stored. If not provided,
       the configured bucket will be used
+      @returns: the s3 object key of the upload comment
   */
   async put(comment, bucket = this.config.inbox) {
     const filename = `${uuid.v4()}.json`;
