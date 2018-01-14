@@ -2,7 +2,7 @@ import CommentsInterface from "../src/commentsInterface";
 import configureContainer from "../src/compositionRoot";
 
 jest.mock("../src/compositionRoot");
-var container = configureContainer();
+const container = configureContainer();
 
 afterAll(() => jest.unmock("../src/compositionRoot.js"));
 

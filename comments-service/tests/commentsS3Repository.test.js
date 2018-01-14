@@ -6,7 +6,7 @@ import fs from "fs";
 jest.mock("../src/compositionRoot");
 jest.mock("fs");
 
-var container = configureContainer();
+const container = configureContainer();
 const testData = { id: 1, body: "test comment" };
 const mockUpload = jest.fn();
 

@@ -4,7 +4,7 @@ import uuid from "node-uuid";
 import path from "path";
 import promisify from "util-promisify";
 
-var writeFile = promisify(fs.writeFile);
+const writeFile = promisify(fs.writeFile);
 
 /*  Repository class for persisting comments into S3 */
 export default class CommentsS3Repository {

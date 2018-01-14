@@ -5,7 +5,7 @@ jest.mock("../src/compositionRoot");
 afterAll(() => jest.unmock("../src/compositionRoot.js"));
 
 test("test getComment returns data", async () => {
-  var response;
+  let response;
   const callback = (error, result) => {
     response = result;
   };
@@ -27,7 +27,7 @@ test("test getComment puts data", async () => {
 });
 
 test("test getComment returns 200", async () => {
-  var response;
+  let response;
   const callback = (error, result) => {
     response = result;
   };
@@ -38,7 +38,7 @@ test("test getComment returns 200", async () => {
 });
 
 test("test getComment returns 504", async () => {
-  var response;
+  let response;
   const errorMessage = "Something went wrong";
   const commentsInterface = handler.container.resolve("commentsInterface");
   commentsInterface.get = async () => {
@@ -58,7 +58,7 @@ test("test parseComment gets data fromn repository", async () => {
   const event = {
     Records: [{ s3: { object: { key: 1 }, bucket: { name: "inbox" } } }]
   };
-  var response;
+  let response;
   const callback = (error, result) => {
     response = result;
   };
@@ -73,7 +73,7 @@ test("test parseComment logs the comment", async () => {
   const event = {
     Records: [{ s3: { object: { key: 1 }, bucket: { name: "inbox" } } }]
   };
-  var response;
+  let response;
   const callback = (error, result) => {
     response = result;
   };

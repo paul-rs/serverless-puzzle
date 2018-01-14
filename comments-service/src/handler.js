@@ -1,6 +1,6 @@
 import configureContainer from "./compositionRoot";
 
-export var container = configureContainer();
+export const container = configureContainer();
 
 /*
     GET baseurl/comments/{id}
@@ -13,7 +13,7 @@ export var container = configureContainer();
 export const getComment = async (event, context, callback) => {
   const id = event.pathParameters.id;
   const commentsInterface = container.resolve("commentsInterface");
-  var response = {};
+  let response = {};
 
   try {
     const comment = await commentsInterface.get(id);
