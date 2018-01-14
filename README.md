@@ -1,5 +1,8 @@
 # Serverless Puzzle
 
+## Installation
+``` npm install ```
+
 ## Deployment
 ```sls deploy --stage=<stage>```
 
