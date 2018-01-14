@@ -38,11 +38,11 @@ export default class CommentsS3Repository {
     const filepath = path.join(this.config.localPath, filename);
     const key = `${this.config.inboxPrefix}/${filename}`;
 
-    console.info('Writing local file to .', filename);
+    console.info('Writing local file to ', filename);
     await writeFile(filepath, JSON.stringify(comment, null, 2));
 
     try {
-      console.info('writing to s3');
+      console.info('Uploading to s3');
       const params = {
         Bucket: bucket,
         Key: key,
