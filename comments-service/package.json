@@ -1,0 +1,39 @@
+{
+  "name": "comments-service",
+  "version": "1.1.0",
+  "description": "A simple serverless app with and API gateway endpoint and a lambda triggered from S3",
+  "main": "handler.js",
+  "scripts": {
+    "test": "jest",
+    "local": "sls offline",
+    "deploy": "sls deploy --aws-profile personal",
+    "build": "serverless webpack -d --progress --out dist",
+    "int": "source ../integration/run.sh"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "aws-sdk": "^2.180.0",
+    "aws-sdk-mock": "^1.7.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-source-map-support": "^1.0.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-3": "^6.24.1",
+    "serverless-offline": "^3.16.0",
+    "serverless-stack-output": "^0.2.3",
+    "serverless-webpack": "^4.2.0",
+    "webpack": "^3.10.0",
+    "webpack-node-externals": "^1.6.0"
+  },
+  "dependencies": {
+    "awilix": "^3.0.1",
+    "babel-runtime": "^6.26.0",
+    "jest": "^21.2.1",
+    "node-uuid": "^1.4.8",
+    "r2": "^2.0.0",
+    "source-map-support": "^0.4.18",
+    "util-promisify": "^2.1.0"
+  }
+}
