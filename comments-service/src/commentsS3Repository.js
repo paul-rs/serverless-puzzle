@@ -1,8 +1,8 @@
-import AWS from 'aws-sdk';
-import fs from 'fs';
-import uuid from 'node-uuid';
-import path from 'path';
-import promisify from 'util-promisify';
+import AWS from "aws-sdk";
+import fs from "fs";
+import uuid from "node-uuid";
+import path from "path";
+import promisify from "util-promisify";
 
 var writeFile = promisify(fs.writeFile);
 
@@ -23,7 +23,7 @@ export default class CommentsS3Repository {
     const s3Object = await this.s3
       .getObject({ Bucket: bucket, Key: key })
       .promise();
-    return JSON.parse(s3Object.Body.toString('utf-8'));
+    return JSON.parse(s3Object.Body.toString("utf-8"));
   }
 
   /*
@@ -38,11 +38,11 @@ export default class CommentsS3Repository {
     const filepath = path.join(this.config.localPath, filename);
     const key = `${this.config.inboxPrefix}/${filename}`;
 
-    console.info('Writing local file to ', filename);
+    console.info("Writing local file to ", filename);
     await writeFile(filepath, JSON.stringify(comment, null, 2));
 
     try {
-      console.info('Uploading to s3');
+      console.info("Uploading to s3");
       const params = {
         Bucket: bucket,
         Key: key,

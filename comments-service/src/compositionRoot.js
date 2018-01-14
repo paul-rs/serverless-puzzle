@@ -4,10 +4,10 @@ import {
   asFunction,
   createContainer,
   Lifetime
-} from 'awilix';
-import Config from './config';
-import CommentsInterface from './commentsInterface';
-import CommentsS3Repository from './commentsS3Repository';
+} from "awilix";
+import Config from "./config";
+import CommentsInterface from "./commentsInterface";
+import CommentsS3Repository from "./commentsS3Repository";
 
 export default function configureContainer() {
   const container = createContainer({

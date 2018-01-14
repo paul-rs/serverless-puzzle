@@ -1,4 +1,4 @@
-import configureContainer from './compositionRoot';
+import configureContainer from "./compositionRoot";
 
 export var container = configureContainer();
 
@@ -12,12 +12,12 @@ export var container = configureContainer();
 */
 export const getComment = async (event, context, callback) => {
   const id = event.pathParameters.id;
-  const commentsInterface = container.resolve('commentsInterface');
+  const commentsInterface = container.resolve("commentsInterface");
   var response = {};
 
   try {
     const comment = await commentsInterface.get(id);
-    const repository = container.resolve('commentsRepository');
+    const repository = container.resolve("commentsRepository");
     await repository.put(comment);
 
     response = { statusCode: 200, body: JSON.stringify(comment) };
@@ -34,7 +34,7 @@ export const getComment = async (event, context, callback) => {
 */
 export const parseComment = async (event, context, callback) => {
   const record = event.Records[0];
-  const repository = container.resolve('commentsRepository');
+  const repository = container.resolve("commentsRepository");
   const comment = await repository.get(
     record.s3.object.key,
     record.s3.bucket.name

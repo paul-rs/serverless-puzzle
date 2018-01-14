@@ -21,12 +21,14 @@ beforeEach(() => {
   });
 });
 
-afterEach(() => { AWS.restore("S3"); });
+afterEach(() => {
+  AWS.restore("S3");
+});
 
 afterAll(() => {
   jest.unmock("../src/compositionRoot.js");
   jest.unmock("fs");
-})
+});
 
 test("test get returns data", async () => {
   const repository = new CommentsRepository({
