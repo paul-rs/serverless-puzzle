@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "local": "sls offline",
-    "deploy": "sls deploy --aws-profile personal",
+    "deploy": "sls deploy",
     "build": "serverless webpack -d --progress --out dist",
     "int": "source ../integration/run.sh"
   },
